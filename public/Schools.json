@@ -1,0 +1,10 @@
+[
+    {"id":1, "img":"https://upload.wikimedia.org/wikipedia/en/thumb/e/ea/Viqarunnisa_Noon_School_and_College_Monogram.svg/1200px-Viqarunnisa_Noon_School_and_College_Monogram.svg.png", "name":"Viqarunnisa Noon School & College" ,"url":"https://www.vnsc.edu.bd/"},
+    {"id":2,"img":"https://d3or5urpu0oqw6.cloudfront.net/images/preferences_images/7GEG03AlTwysFkmHBwu2F2QNzRVIa1oRFoBvuSjO.jpeg",  "name":"Ideal School and College" ,"url":"https://iscm.edu.bd/"},
+    {"id":3,"img":"https://upload.wikimedia.org/wikipedia/en/thumb/f/f5/Morogram_of_RAJUK_Uttara_Model_College.svg/1200px-Morogram_of_RAJUK_Uttara_Model_College.svg.png",  "name":"RAJUK Uttara Model College" ,"url":"http://www.rajukcollege.edu.bd/"},
+    {"id":4, "img":"https://upload.wikimedia.org/wikipedia/en/e/e1/This_is_the_official_monogram_of_JCPSC.jpg", "name":"Jalalabad Cant public..." ,"url":"https://www.jcpscsylhet.edu.bd/#/"},
+    {"id":5,"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTryn05MKjuUeeqdUroo1swTmHYRM6meYomO78QXoVDQPKis5JPsViiLRTJW4Vp9GNNPv0&usqp=CAU",  "name":"St. Joseph Higher Secondary School" ,"url":"https://sjs.edu.bd/new/index.php"},
+    {"id":6,"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnAi8Bq5BQ_9o9g2-PIvD56b5hidGAg_BCerWc9J8ha-cZ_5798owEO6ybgXqSYwRBj6M&usqp=CAU",  "name":"Dhaka Residential Model College" ,"url":"https://www.vnsc.edu.bd/"},
+    {"id":7,"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGU3vhEjggHK2yjBYTnlQQgDSVFboeVWx8w21poh_btQBOOVAnLFm_6ukMjiEdHehV1hc&usqp=CAU",  "name":"Comilla Modern High School" ,"url":"https://www.vnsc.edu.bd/"},
+    {"id":8,"img":"https://ctgcs.edu.bd/img/site/ctgcs.png",  "name":"Chittagong Collegiate School.." ,"url":"https://www.vnsc.edu.bd/"}
+]

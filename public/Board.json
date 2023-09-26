@@ -1,0 +1,19 @@
+[
+    {"id":1, "name":"Dhaka  Board","img":"https://techoffernews.com/wp-content/uploads/2022/06/Dhaka-Education-Board-Contact-Number.jpeg","url":"https://dhakaeducationboard.gov.bd/","stb":" 1921"},
+    {"id":2, "name":"Jashore  Board","img":"https://cdn.risingbd.com/media/imgAll/2022August/en/Jessore-2211280846-2211280923.jpg","url":"https://www.jessoreboard.gov.bd/","stb":" 1963"},
+
+    {"id":3, "name":"Barisal  Board","img":"https://www.amaderbarisal.com/wp-content/uploads/2015/05/education-board-barisal.jpg","url":"https://barisalboard.portal.gov.bd/","stb":"1999"},
+
+    {"id":4, "name":"Chattogram  Board","img":"https://eng.campuslive24.com/uploads/shares/2021/Cbord-cl-2021-11-21-23-05-33.jpg","url":"https://bise-ctg.portal.gov.bd/","stb":"1995"},
+
+    {"id":5, "name":"Cumilla  Board","img":"https://www.kalerkantho.com/_next/image?url=http%3A%2F%2Fecdn.kalerkantho.com%2Fpublic%2Fnews_images%2F2022%2F12%2F24%2F200849185512Untitled-6_copy.jpg&w=1920&q=100","url":"https://comillaboard.portal.gov.bd/","stb":"1962"},
+    {"id":6, "name":"Dinajpur  Board","img":"https://www.daily-sun.com/assets/news_images/2022/09/22/Dinajpur-Education-Board-ds-1.jpg","url":"https://dinajpureducationboard.gov.bd/","stb":"2006"},
+
+    {"id":7, "name":"Mymensingh  Board","img":"https://bucket.barta24.com/uploads/news/2022/Jun/23/1655966693105.jpg","url":"https://www.mymensingheducationboard.gov.bd/","stb":"2017"},
+    {"id":8, "name":"Rajshahi Board","img":"https://www.banglanews24.com/public/uploads/2020/09/23/thumbnail/1600862377.Rajshahi-board.jpg","url":"https://rajshahieducationboard.gov.bd/","stb":"1961"},
+    {"id":9, "name":"Sylhet  Board","img":"https://updateoffer.com/wp-content/uploads/2017/11/Sylhet-Education-Board-Contact-Number.jpg","url":"https://sylhetboard.gov.bd/","stb":"1999"},
+    {"id":10, "name":"Madrasah  Board","img":"https://ecdn.dhakatribune.net/contents/cache/images/640x359x1/uploads/dten/2019/04/madrasa-dhaka-jpgeeeeed-1555522357641.jpg","url":"https://bmeb.gov.bd/","stb":"1979"},
+    {"id":11, "name":"Technical  Board","img":"https://bangladeshus.com/wp-content/uploads/2016/12/bteb.jpg","url":"https://bteb.gov.bd/","stb":"1969"},
+    {"id":12, "name":"Bangladesh  Board","img":"https://i0.wp.com/eboardresultbd.com/wp-content/uploads/2018/01/Education-Board-Results.jpg?fit=1208%2C636&ssl=1","url":"http://www.educationboard.gov.bd/","stb":"1971"}
+
+]
