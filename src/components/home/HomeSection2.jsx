@@ -10,7 +10,7 @@ const HomeSection2 = () => {
 
   return (
     <>
-      <section className="section-two bg-amber-300  mt-16 flex flex-col">
+      <section className="section-two bg-amber-400  mt-16 flex flex-col">
         <div className="sub-section-one mt-16">
           <div class="text-center">
             <h1 class="text-3xl font-bold">Top 8 Schools in Bangladesh 2023</h1>

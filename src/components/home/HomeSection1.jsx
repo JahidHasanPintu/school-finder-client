@@ -13,14 +13,14 @@ const HomeSection1 = () => {
             <p className="text-2xl font-semibold text-slate-800 text-justify">
               <span className="text-blue-400">Discover</span> Your Path to
               Success with{" "}
-              <span className="text-amber-600">School Finder BD</span>.{" "}
+              <span className="text-amber-700">School Finder BD</span>.{" "}
               <span className="text-blue-400">School Finder BD</span> simplifies
               the school search process, helping you find the perfect school.
               Your journey to knowledge, growth, and a brighter future starts
               here.
             </p>
             <button
-              className="bg-blue-600 py-1 px-6 rounded-xl font-semibold text-xl
+              className="bg-blue-600 hover:bg-amber-400 hover:text-black py-1 px-6 rounded-xl font-semibold text-xl
             mt-8 text-white text-center"
             >
               About Us

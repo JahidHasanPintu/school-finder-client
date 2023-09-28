@@ -5,7 +5,7 @@ const HomeBanner = () => {
   return (
     <>
       {/* section-banner  start here  */}
-      <section className="section-one bg-amber-300 pb-12 pt-20 ">
+      <section className="section-one bg-amber-400 pb-12 pt-20 ">
         {/* sub-section one start here  */}
         <div className="sub-section-one w-4/5 mx-auto flex flex-row justify-between items-center gap-16">
           <div className="flex-1 mt-20">

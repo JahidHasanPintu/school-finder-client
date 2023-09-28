@@ -30,7 +30,7 @@ const HomeSection3 = () => {
               <p className="mt-3 mb-4">Formation: {board.stb}</p>
               <a
                 href={board.url}
-                className="inline-block mb-2 bg-blue-700 text-white py-2 px-3 rounded-md font-semibold hover:bg-amber-800"
+                className="inline-block mb-2 bg-blue-700 text-white py-2 px-3 rounded-md font-semibold hover:bg-amber-400 hover:text-black"
               >
                 See details
               </a>
