@@ -1,17 +1,14 @@
-import { useState } from "react";
+import { Outlet } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
-// import Home from "./components/home/Home";
-// import Footer from "./components/footer/Footer";
-import NewsPortal from "./components/news-portal/NewsPortal";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
     <>
-      {/* <Navbar></Navbar> */}
-      {/* <Home></Home> */}
-      <NewsPortal></NewsPortal>
-      {/* <Footer></Footer> */}
+      <Navbar></Navbar>
+      <Outlet></Outlet>
+      <Footer></Footer>
     </>
   );
 }

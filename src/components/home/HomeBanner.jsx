@@ -5,16 +5,16 @@ const HomeBanner = () => {
   return (
     <>
       {/* section-banner  start here  */}
-      <section className="section-one bg-amber-400 pb-12 pt-20 ">
+      <section className="section-one bg-amber-400  ">
         {/* sub-section one start here  */}
         <div className="sub-section-one w-4/5 mx-auto flex flex-row justify-between items-center gap-16">
           <div className="flex-1 mt-20">
-            <h1 className="text-4xl font-bold">
+            <h1 className="text-3xl font-bold">
               <span className="text-blue-500">Discover</span> Your{" "}
-              <span className="text-blue-500">Path</span> to Knowledge Find Your
-              Ideal School with Us
+              <span className="text-blue-500">Path</span> to Knowledge <br />
+              Find Your Ideal School with Us
             </h1>
-            <p className="text-xl mt-5 mb-8 ms-10 font-semibold text-black">
+            <p className="text-xl mt-5 mb-8 ms-2 font-semibold text-black">
               Search for School Names and Location
             </p>
 
