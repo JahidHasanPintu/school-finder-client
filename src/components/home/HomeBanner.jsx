@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import bannerImg from "../images/bg-1.png";
-// import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const HomeBanner = () => {
+  const [searchTex, setSearchTex] = useState("");
+  const handleSearch = (e) => {
+    const searchText = e.target.value;
+    setSearchTex(searchText);
+  }
+  const navigation = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigation(`/result`, { state: { searchTex } });
+
+  }
+
+
   return (
     <>
       {/* section-banner  start here  */}
@@ -18,7 +31,7 @@ const HomeBanner = () => {
               Search for School Names and Location
             </p>
 
-            <form class="flex items-center drop-shadow-md">
+            <form onSubmit={handleSubmit} class="flex items-center drop-shadow-md">
               <label for="voice-search" class="sr-only">
                 Search
               </label>
@@ -41,6 +54,7 @@ const HomeBanner = () => {
                   </svg>
                 </div>
                 <input
+                  onChange={handleSearch}
                   type="text"
                   id="voice-search"
                   class="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:border-blue-600 dark:placeholder-slate-700 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
