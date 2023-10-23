@@ -4,6 +4,7 @@ import HomeSection1 from "./HomeSection1";
 import HomeSection2 from "./HomeSection2";
 import HomeSection3 from "./HomeSection3";
 import Loading from "../Loading/Loading";
+import SchoolMap from "../SchoolMap/SchoolMap";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,6 +25,7 @@ const Home = () => {
       ) : (
         <div>
           <HomeBanner></HomeBanner>
+          <SchoolMap/>
           <HomeSection1></HomeSection1>
           <HomeSection2></HomeSection2>
           <HomeSection3></HomeSection3>
