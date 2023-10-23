@@ -6,6 +6,7 @@ import { getBaseURL } from '../../../api/baseURL';
 import axios from 'axios';
 import Pagination from '../../Pagination/Pagination';
 import { toast } from 'react-toastify';
+import Loading from '../../Loading/Loading';
 
 const AllSchool = () => {
     const baseURL = getBaseURL();
@@ -19,8 +20,10 @@ const AllSchool = () => {
     const [totalPages, setTotalPages] = useState("");
     const location = useLocation();
     const pathName = `${location.pathname}`;
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
+        setIsLoading(true);
         const apiEndpoint = `${baseURL}/schools?page=${page}&limit=${limit}&search=${search}&filterType=${filterType}&filterDivision=${filterDivision}`;
         axios.get(apiEndpoint)
             .then((response) => {
@@ -33,7 +36,7 @@ const AllSchool = () => {
                 console.error('Error fetching schools:', error);
             });
 
-
+            setIsLoading(false);
     }, [page, limit, search, filterType, filterDivision]);
 
     const handleSearch = (e) => {
@@ -61,9 +64,9 @@ const AllSchool = () => {
         navigate(`/admin/edit-school`,{ state: { school } })
     }
 
-    // if (loading) {
-    //     return <Loading />
-    // }
+    if (isLoading) {
+        return <Loading />
+    }
 
     return (
         <div>

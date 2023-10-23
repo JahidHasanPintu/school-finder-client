@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { getBaseURL } from '../../../api/baseURL';
 import axios from 'axios';
 import Pagination from '../../Pagination/Pagination';
+import Loading from '../../Loading/Loading';
 
 const Dashboard = () => {
 
@@ -15,8 +16,10 @@ const Dashboard = () => {
     const [filterType, setFilterType] = useState("");
     const [filterDivision, setFilterDivision] = useState("");
     const [totalPages, setTotalPages] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
+        setIsLoading(true);
         const apiEndpoint = `${baseURL}/schools?page=${page}&limit=${limit}&search=${search}&filterType=${filterType}&filterDivision=${filterDivision}`;
         axios.get(apiEndpoint)
             .then((response) => {
@@ -29,7 +32,7 @@ const Dashboard = () => {
                 console.error('Error fetching schools:', error);
             });
 
-
+            setIsLoading(false);
     }, [page, limit, search, filterType, filterDivision]);
 
     const handleSearch = (e) => {
@@ -45,14 +48,15 @@ const Dashboard = () => {
 
 
     // const [orders, totalPages, totalItem, loading] = useOrders(page, limit, sortBy, userID);
-    // if (loading) {
-    //     return <Loading />
-    // }
+  
 
     let pendingCount = 0;
     let deliveredCount = 0;
     let unpaidCount = 0;
-
+  if (isLoading) {
+    console.log("loading worked");
+        return <Loading />
+    }
 
 
     return (

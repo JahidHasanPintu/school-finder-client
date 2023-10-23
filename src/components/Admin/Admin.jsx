@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Account.css'
-import { Outlet, Route, Routes } from 'react-router-dom';
+import { Navigate, Outlet, Route, Routes, useLocation } from 'react-router-dom';
 import Sidebar from './Sidebar/Sidebar';
 import Dashboard from './Dashboard/Dashboard';
 import InvoiceModal from './AllSchool/AddSchool';
@@ -8,7 +8,16 @@ import Settings from './Settings/Settings';
 import AllSchool from './AllSchool/AllSchool';
 import AddSchool from './AllSchool/AddSchool';
 import EditSchool from './AllSchool/EditSchool';
+import { useAuth } from '../../api/AuthContext';
+import { toast } from 'react-toastify';
 const Admin = () => {
+    const { user } = useAuth();
+    const location = useLocation();
+    if (!user || !user.role || user.role !== "admin") {
+        console.log(user ? user.role : "User object or role not defined");
+        toast.error('You are not authorized');
+        return <Navigate to="/home" state={{ from: location }} replace />;
+    }
     return (
         <div>
         <section className="py-5 w-11/12 mx-auto text-start">

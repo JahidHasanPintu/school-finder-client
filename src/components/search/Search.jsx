@@ -4,6 +4,7 @@ import { getBaseURL } from '../../api/baseURL';
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
 import Pagination from '../Pagination/Pagination';
+import Loading from '../Loading/Loading';
 
 const Search = () => {
     const location = useLocation();
@@ -18,11 +19,12 @@ const Search = () => {
     const [filterDivision, setFilterDivision] = useState("");
     const [totalPages, setTotalPages] = useState("");;
     const pathName = `${location.pathname}`;
-
+    const [isLoading, setIsLoading] = useState(false);
 
 
 
     useEffect(() => {
+        setIsLoading(true);
         const apiEndpoint = `${baseURL}/schools?page=${page}&limit=${limit}&search=${search}&filterType=${filterType}&filterDivision=${filterDivision}`;
         axios.get(apiEndpoint)
             .then((response) => {
@@ -35,17 +37,18 @@ const Search = () => {
                 console.error('Error fetching schools:', error);
             });
 
-
+        setIsLoading(false);
     }, [page, limit, search, filterType, filterDivision]);
 
     useEffect(() => {
+        // setIsLoading(true);
         const setSearchValue = () => {
             if (searchTex) {
                 setSearch(searchTex);
             }
         }
         setSearchValue();
-
+       
     }, [searchTex]);
 
     const handleSearch = (e) => {
@@ -56,7 +59,7 @@ const Search = () => {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        
+
 
 
     }
@@ -81,9 +84,16 @@ const Search = () => {
                 </div>
                 <h2 className='m-2'>Showing {schoolData?.schoolsOnCurrentPage} out of {schoolData?.totalSchools} schools</h2>
             </form>
-            {schools.map((school) => (
-                <SchoolCard key={school._id} school={school} />
-            ))}
+            {isLoading ? (
+                <Loading />
+            ) : (
+                <div>
+                    {schools.map((school) => (
+                        <SchoolCard key={school._id} school={school} />
+                    ))}
+                </div>
+            )}
+
             <Pagination page={page} totalPages={totalPages} setPage={setPage} path={pathName} />
         </div>
     );

@@ -12,6 +12,9 @@ import Admin from "./components/Admin/Admin.jsx";
 import { AuthProvider } from "./api/AuthContext.jsx";
 import Login from "./components/Auth/Login.jsx";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute.jsx";
+import Signup from "./components/Auth/Signup.jsx";
+import IsAuthorized from "./components/PrivateRoute/IsAuthorized.jsx";
+import BlogDetails from "./components/blogs/BlogDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -20,11 +23,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/home",
-        element: <Home></Home>,
+        element: <PrivateRoute> <Home/></PrivateRoute>,
       },
       {
         path: "/",
-        element: <Home></Home>,
+        element: <PrivateRoute> <Home/></PrivateRoute>,
       },
       {
         path: "news",
@@ -33,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "blogs",
         element: <Blogs></Blogs>,
+      },
+      {
+        path: "blog-details",
+        element: <BlogDetails/>,
       },
       {
         path: "/about",
@@ -44,11 +51,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/admin/*",
-        element: <PrivateRoute><Admin/></PrivateRoute>,
+        element: <PrivateRoute><IsAuthorized> <Admin/></IsAuthorized></PrivateRoute>,
       },
       {
         path: "/login",
         element: <Login/>,
+      },
+      {
+        path: "/register",
+        element: <Signup/>,
       },
     ],
   },
