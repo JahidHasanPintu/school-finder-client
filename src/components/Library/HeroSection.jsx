@@ -124,6 +124,29 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+      <div className="mx-14 mb-28">
+      <h1 className="text-3xl font-semibold ">All Books</h1> <hr />
+      <section className="grid grid-cols-6 bg-slate-100 mt-8 gap-6  p-4 rounded">
+        {books.map((book) => (
+          <div
+            key={book._id}
+            className="flex flex-col items-center text-center shadow-sm gap-y-1 rounded w-30 h-[260px] bg-white border relative"
+          >
+            <img className="w-24 h-28 mt-2" src={book.image} alt="" />
+            <h1 className="font-semibold">{book.name}</h1>
+            <p>{book.authorName}</p>
+            <a
+              href={book.pdf}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold text-orange-500 absolute bottom-1"
+            >
+              Download
+            </a>
+          </div>
+        ))}
+      </section>
+    </div>
     </div>
   );
 };

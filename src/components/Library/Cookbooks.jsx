@@ -8,7 +8,7 @@ const CookBooks = () => {
       .then((res) => res.json())
       .then((data) => {
         // Filter books based on the "islamic" category
-        const islamicCategoryBooks = data.filter(
+        const islamicCategoryBooks = data.books.filter(
           (book) => book.category === "cook"
         );
         setIslamicBooks(islamicCategoryBooks);
