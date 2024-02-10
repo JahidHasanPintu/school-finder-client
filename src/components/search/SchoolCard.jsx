@@ -1,10 +1,15 @@
 import React from "react";
-
+import { Link, useLocation, useNavigate } from "react-router-dom";
 const SchoolCard = (props) => {
+  const school = props?.school;
+  const navigate = useNavigate();
+  const navigateToDetails = () => {
+    navigate(`/school-details/${school._id}`, { state: { school } });
+  };
   // const [DIVISION_NAME, DISTRICT_NAME, THANA_NAME, TYP, LVL, EIIN, INSTITUTE_NAME_NEW, POST_OFFICE, LOCATION, MOBPHONE] = props.school || [];
 
   return (
-    <div class="mt-5 mx-10 w-8/12">
+    <div onClick={navigateToDetails} class="mt-5 mx-10 w-8/12">
       <div className="bg-gray-200 p-5 lg:flex  items-center rounded-lg w-[800px]  h-[250px] ">
         <div
           class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"

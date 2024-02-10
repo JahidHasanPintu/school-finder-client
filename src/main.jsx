@@ -16,6 +16,7 @@ import IsAuthorized from "./components/PrivateRoute/IsAuthorized.jsx";
 import BlogDetails from "./components/blogs/BlogDetails.jsx";
 import About from "./components/about/About.jsx";
 import Library from "./components/Library/Library.jsx";
+import SchoolDetails from "./components/search/SchoolDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,14 @@ const router = createBrowserRouter([
       {
         path: "blog-details",
         element: <BlogDetails />,
+      },
+      {
+        path: "school-details",
+        element: <SchoolDetails />,
+      },
+      {
+        path: "school-details/:schoolID",
+        element: <SchoolDetails />,
       },
       {
         path: "/about",
