@@ -1,6 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getBaseURL } from "../../api/baseURL";
+import axios from "axios";
 
 const HeroSection = () => {
+  const baseURL = getBaseURL();
+  const [books, setBooks] = useState([]);
+  const [schoolData, setSchoolData] = useState();
+  const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(20);
+  const [search, setSearch] = useState("");
+  const [filterCategory, setFilterCategory] = useState("");
+  const [filterDivision, setFilterDivision] = useState("");
+  const [totalPages, setTotalPages] = useState("");
+  const pathName = `${location.pathname}`;
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+    const apiEndpoint = `${baseURL}/books?page=${page}&limit=${limit}&search=${search}&filterCategory=${filterCategory}`;
+    axios
+      .get(apiEndpoint)
+      .then((response) => {
+        setBooks(response.data.books);
+        setSchoolData(response.data);
+        setTotalPages(response.data.totalPages);
+      })
+      .catch((error) => {
+        // Handle errors
+        console.error("Error fetching books:", error);
+      });
+
+    setIsLoading(false);
+  }, [page, limit, search, filterCategory]);
+
+
+  const handleSearch = (e) => {
+    const searchText = e.target.value;
+    setSearch(searchText);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div>
       <div className="mx-10">
@@ -50,6 +91,7 @@ const HeroSection = () => {
                   </svg>
                 </div>
                 <input
+                  onChange={handleSearch}
                   type="search"
                   id="default-search"
                   class="block w-full p-4 ps-10 text-sm rounded-lg"
@@ -63,6 +105,21 @@ const HeroSection = () => {
                   Search
                 </button>
               </div>
+              {search && (
+                <div className="w-full p-4 mt-2 bg-gray-100 rounded-lg">
+                  {books.length > 0 ? (
+                    <ul>
+                      {books.map((book, index) => (
+                        <li className="border-b border-gray-300 py-2 cursor-pointer" key={index}>
+                          <h2>{book?.name}</h2>
+                          </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p>No books found</p>
+                  )}
+                </div>
+              )}
             </form>
           </div>
         </div>
