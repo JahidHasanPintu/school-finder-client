@@ -67,10 +67,10 @@ const Sidebar = () => {
             </Link>
           </li>
           <li
-            className={`${location.pathname === "/admin/allschool/" ? "" : ""}`}
+            className={`${location.pathname === "/admin/allblogs/" ? "" : ""}`}
           >
             <Link
-              to="/admin/allschool/"
+              to="/admin/allblogs/"
               className="flex items-center p-2 space-x-3 rounded-md"
             >
               <svg
@@ -86,10 +86,10 @@ const Sidebar = () => {
             </Link>
           </li>
           <li
-            className={`${location.pathname === "/admin/allschool/" ? "" : ""}`}
+            className={`${location.pathname === "/admin/allbooks/" ? "" : ""}`}
           >
             <Link
-              to="/admin/allschool/"
+              to="/admin/allbooks/"
               className="flex items-center p-2 space-x-3 rounded-md"
             >
               <svg

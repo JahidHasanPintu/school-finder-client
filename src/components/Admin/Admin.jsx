@@ -10,6 +10,12 @@ import AddSchool from './AllSchool/AddSchool';
 import EditSchool from './AllSchool/EditSchool';
 import { useAuth } from '../../api/AuthContext';
 import { toast } from 'react-toastify';
+import AllBooks from './AllBooks/AllBooks';
+import AddBooks from './AllBooks/AddBooks';
+import EditBooks from './AllBooks/EditBooks';
+import AllBlogs from './AllBlogs/AllBlogs';
+import AddBlogs from './AllBlogs/AddBlogs';
+import EditBlogs from './AllBlogs/EditBlogs';
 const Admin = () => {
     const { user } = useAuth();
     const location = useLocation();
@@ -32,6 +38,14 @@ const Admin = () => {
                             <Route path="/allschool" element={<AllSchool/>}></Route>
                             <Route path="/addschool" element={<AddSchool/>}></Route>
                             <Route path="/edit-school" element={<EditSchool/>}></Route>
+                            
+                            <Route path="/allblogs" element={<AllBlogs/>}></Route>
+                            <Route path="/addblogs" element={<AddBlogs/>}></Route>
+                            <Route path="/edit-blogs" element={<EditBlogs/>}></Route>
+
+                            <Route path="/allbooks" element={<AllBooks/>}></Route>
+                            <Route path="/addbook" element={<AddBooks/>}></Route>
+                            <Route path="/edit-book" element={<EditBooks/>}></Route>
                             
                             <Route path="/settings" element={<Settings/>}></Route>
                             <Route path="/*" element={<Outlet />} />

@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-
-import InvoiceModal from "./AddSchool";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { getBaseURL } from "../../../api/baseURL";
 import axios from "axios";
@@ -63,7 +61,7 @@ const AllBooks = () => {
 
   const navigate = useNavigate();
   const handleEdit = (school) => {
-    navigate(`/admin/edit-school`, { state: { school } });
+    navigate(`/admin/edit-book`, { state: { school } });
   };
 
   if (isLoading) {
@@ -74,9 +72,9 @@ const AllBooks = () => {
     <div>
       <div className="overflow-x-auto">
         <div className="px-1 border-b">
-          <Link to={"/admin/addschool"}>
+          <Link to={"/admin/addbook"}>
             <button className="mb-2 bg-blue-500 hover:bg-blue-600 text-white py-1 px-2 rounded">
-              Add School{" "}
+              Add Book{" "}
             </button>
           </Link>
         </div>
