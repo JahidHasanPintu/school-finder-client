@@ -6,7 +6,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/home/Home.jsx";
 import Portal from "./components/portal/Portal.jsx";
 import Blogs from "./components/blogs/Blogs.jsx";
-import About from "./components/about/About.jsx";
 import Search from "./components/search/Search.jsx";
 import Admin from "./components/Admin/Admin.jsx";
 import { AuthProvider } from "./api/AuthContext.jsx";
@@ -15,6 +14,8 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute.jsx";
 import Signup from "./components/Auth/Signup.jsx";
 import IsAuthorized from "./components/PrivateRoute/IsAuthorized.jsx";
 import BlogDetails from "./components/blogs/BlogDetails.jsx";
+import About from "./components/about/About.jsx";
+import Library from "./components/Library/Library.jsx";
 
 const router = createBrowserRouter([
   {
@@ -23,11 +24,21 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/home",
-        element: <PrivateRoute> <Home/></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <Home />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/",
-        element: <PrivateRoute> <Home/></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <Home />
+          </PrivateRoute>
+        ),
       },
       {
         path: "news",
@@ -39,27 +50,38 @@ const router = createBrowserRouter([
       },
       {
         path: "blog-details",
-        element: <BlogDetails/>,
+        element: <BlogDetails />,
       },
       {
         path: "/about",
-        element: <About></About>,
+        element: <About />,
+      },
+      {
+        path: "/library",
+        element: <Library />,
       },
       {
         path: "/result",
-        element: <Search/>,
+        element: <Search />,
       },
       {
         path: "/admin/*",
-        element: <PrivateRoute><IsAuthorized> <Admin/></IsAuthorized></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <IsAuthorized>
+              {" "}
+              <Admin />
+            </IsAuthorized>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
-        element: <Login/>,
+        element: <Login />,
       },
       {
         path: "/register",
-        element: <Signup/>,
+        element: <Signup />,
       },
     ],
   },
@@ -67,7 +89,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
-    <RouterProvider router={router}></RouterProvider>
+      <RouterProvider router={router}></RouterProvider>
     </AuthProvider>
   </React.StrictMode>
 );

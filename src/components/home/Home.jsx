@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import HomeBanner from "./HomeBanner";
 import HomeSection1 from "./HomeSection1";
-import HomeSection2 from "./HomeSection2";
-import HomeSection3 from "./HomeSection3";
+import Recommended from "./Recommended";
 import Loading from "../Loading/Loading";
-import SchoolMap from "../SchoolMap/SchoolMap";
-import MapDivider from "./MapDivider";
+import Map from "./Map";
+import TopSchools from "./TopSchools";
+import ExploreBoard from "./ExploreBoard";
+import Education from "./Education";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,15 +23,16 @@ const Home = () => {
   return (
     <div>
       {isLoading ? (
-        <Loading/>
+        <Loading />
       ) : (
         <div>
           <HomeBanner></HomeBanner>
-          <SchoolMap/>
-          <MapDivider/>
+          <Map />
           <HomeSection1></HomeSection1>
-          <HomeSection2></HomeSection2>
-          <HomeSection3></HomeSection3>
+          <TopSchools />
+          <Recommended></Recommended>
+          <ExploreBoard />
+          <Education />
         </div>
       )}
     </div>

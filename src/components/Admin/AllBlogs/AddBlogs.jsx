@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { getBaseURL } from "../../../api/baseURL";
 import { toast } from "react-toastify";
 
-const AddSchool = () => {
+const AddBlogs = () => {
   const baseURL = getBaseURL();
   const navigate = useNavigate();
   const API_URL = `${baseURL}/schools/create`; // Replace with your API URL
@@ -52,7 +52,7 @@ const AddSchool = () => {
                 name="INSTITUTE_NAME_NEW"
                 value={formData.INSTITUTE_NAME_NEW}
                 onChange={handleChange}
-                placeholder="Institute Names"
+                placeholder="Institute Name"
                 className="w-full p-2 border rounded"
               />
             </div>
@@ -161,4 +161,4 @@ const AddSchool = () => {
   );
 };
 
-export default AddSchool;
+export default AddBlogs;
