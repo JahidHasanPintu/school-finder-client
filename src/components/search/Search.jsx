@@ -121,7 +121,7 @@ const Search = () => {
         <p className="text-lg text-center  text-white bg-slate-700  p-3 rounded font-bold">
           Recommended Top Search Schools
         </p>
-        <RecommendedSearch />
+        <RecommendedSearch schools = {schools} />
       </div>
       <div className="absolute right-0 bottom-0">
         <Pagination
