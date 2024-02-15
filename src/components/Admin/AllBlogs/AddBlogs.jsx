@@ -7,18 +7,18 @@ import { toast } from "react-toastify";
 const AddBlogs = () => {
   const baseURL = getBaseURL();
   const navigate = useNavigate();
-  const API_URL = `${baseURL}/schools/create`; // Replace with your API URL
+  const API_URL = `${baseURL}/blogs/create`; // Replace with your API URL
   const [formData, setFormData] = useState({
-    DIVISION_NAME: "",
-    DISTRICT_NAME: "",
-    THANA_NAME: "",
-    TYP: "",
-    LVL: "",
-    EIIN: "",
-    INSTITUTE_NAME_NEW: "",
-    POST_OFFICE: "",
-    LOCATION: "",
-    MOBPHONE: "",
+    title: "",
+    description: "",
+    image: "",
+    blogLink: "",
+    category: "",
+    // EIIN: "",
+    // INSTITUTE_NAME_NEW: "",
+    // POST_OFFICE: "",
+    // LOCATION: "",
+    // MOBPHONE: "",
   });
 
   const handleChange = (e) => {
@@ -49,103 +49,56 @@ const AddBlogs = () => {
             <div className="mb-4">
               <input
                 type="text"
-                name="INSTITUTE_NAME_NEW"
-                value={formData.INSTITUTE_NAME_NEW}
+                name="title"
+                value={formData.title}
                 onChange={handleChange}
-                placeholder="Institute Name"
+                placeholder="Blog title"
                 className="w-full p-2 border rounded"
               />
             </div>
             <div className="mb-4">
               <input
                 type="text"
-                name="MOBPHONE"
-                value={formData.MOBPHONE}
+                name="description"
+                value={formData.description}
                 onChange={handleChange}
-                placeholder="Mobile number"
+                placeholder="Description"
                 className="w-full p-2 border rounded"
               />
             </div>
             <div className="mb-4">
               <input
                 type="number"
-                name="EIIN"
-                value={formData.EIIN}
+                name="image"
+                value={formData.image}
                 onChange={handleChange}
-                placeholder="EIIN"
+                placeholder="Image Link"
                 className="w-full p-2 border rounded"
               />
             </div>
             <div className="mb-4">
               <input
                 type="text"
-                name="TYP"
-                value={formData.TYP}
+                name="blogLink"
+                value={formData.blogLink}
                 onChange={handleChange}
-                placeholder="Type (e.g., SCHOOL AND COLLEGE)"
+                placeholder="blogLink"
                 className="w-full p-2 border rounded"
               />
             </div>
             <div className="mb-4">
-              <input
-                type="text"
-                name="LVL"
-                value={formData.LVL}
+              <select
+                name="category"
+                value={formData.category}
                 onChange={handleChange}
-                placeholder="Level (e.g., Higher Secondary)"
                 className="w-full p-2 border rounded"
-              />
-            </div>
-
-            <div className="mb-4">
-              <input
-                type="text"
-                name="POST_OFFICE"
-                value={formData.POST_OFFICE}
-                onChange={handleChange}
-                placeholder="Post Office"
-                className="w-full p-2 border rounded"
-              />
-            </div>
-            <div className="mb-4">
-              <input
-                type="text"
-                name="LOCATION"
-                value={formData.LOCATION}
-                onChange={handleChange}
-                placeholder="Location"
-                className="w-full p-2 border rounded"
-              />
-            </div>
-            <div className="mb-4">
-              <input
-                type="text"
-                name="THANA_NAME"
-                value={formData.THANA_NAME}
-                onChange={handleChange}
-                placeholder="Thana Name"
-                className="w-full p-2 border rounded"
-              />
-            </div>
-            <div className="mb-4">
-              <input
-                type="text"
-                name="DISTRICT_NAME"
-                value={formData.DISTRICT_NAME}
-                onChange={handleChange}
-                placeholder="District Name"
-                className="w-full p-2 border rounded"
-              />
-            </div>
-            <div className="mb-4">
-              <input
-                type="text"
-                name="DIVISION_NAME"
-                value={formData.DIVISION_NAME}
-                onChange={handleChange}
-                placeholder="Division Name"
-                className="w-full p-2 border rounded"
-              />
+              >
+                <option value="" disabled selected hidden>
+                  Select Category
+                </option>
+                <option value="events">Events</option>
+                <option value="blogs">Blogs</option>
+              </select>
             </div>
 
             <button
