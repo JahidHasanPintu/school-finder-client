@@ -38,6 +38,12 @@ const HeroSection = () => {
     const searchText = e.target.value;
     setSearch(searchText);
   };
+
+  const handleCategoryChange = (e) => {
+    const cat = e.target.value;
+    setFilterCategory(cat);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -125,7 +131,30 @@ const HeroSection = () => {
         </div>
       </div>
       <div className="mx-14 mb-28">
-      <h1 className="text-3xl font-semibold ">All Books</h1> <hr />
+        <div className="mt-3 flex justify-between items-center">
+        <h1 className="text-3xl font-semibold ">All Books</h1> <hr />
+        <div className="mx-2 mb-2">
+          <select
+            name="category"
+            onChange={handleCategoryChange}
+            className="w-full p-2 border rounded"
+          >
+            <option value="" disabled selected hidden>
+              Filter category
+            </option>
+            <option value="islamic">Islamic</option>
+            <option value="children">Children</option>
+            <option value="programming">Programming</option>
+            <option value="sports">Sports</option>
+            <option value="story">Story</option>
+            <option value="cook">Cook</option>
+            <option value="poetry">poetry</option>
+          </select>
+          </div>
+        </div>
+      
+
+
       <section className="grid grid-cols-6 bg-slate-100 mt-8 gap-6  p-4 rounded">
         {books.map((book) => (
           <div

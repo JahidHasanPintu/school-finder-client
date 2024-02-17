@@ -7,18 +7,13 @@ import { toast } from "react-toastify";
 const AddBlogs = () => {
   const baseURL = getBaseURL();
   const navigate = useNavigate();
-  const API_URL = `${baseURL}/blogs/create`; // Replace with your API URL
+  const API_URL = `${baseURL}/blogs/create`;
   const [formData, setFormData] = useState({
     title: "",
     description: "",
     image: "",
     blogLink: "",
     category: "",
-    // EIIN: "",
-    // INSTITUTE_NAME_NEW: "",
-    // POST_OFFICE: "",
-    // LOCATION: "",
-    // MOBPHONE: "",
   });
 
   const handleChange = (e) => {
@@ -31,9 +26,9 @@ const AddBlogs = () => {
     try {
       // Send a POST request to your API with formData
       const response = await axios.post(API_URL, formData);
-      toast.success("School Added successfully");
+      toast.success(response?.data?.message);
       console.log("Data successfully submitted:", response.data);
-      navigate("/admin");
+      navigate("/admin/allblogs/");
     } catch (error) {
       console.error("Error submitting data:", error);
       toast.error("failed !", error);
@@ -43,7 +38,7 @@ const AddBlogs = () => {
   return (
     <div class="card bg-white">
       <div class="card-body">
-        <h2 className="mx-5 py-3 text-lg font-semibold">Add a new school</h2>
+        <h2 className="mx-5 py-3 text-lg font-semibold">Add a new blog</h2>
         <div className="container mx-auto p-4">
           <form onSubmit={handleSubmit} className="max-w-md mx-auto grid col-2">
             <div className="mb-4">
@@ -68,7 +63,7 @@ const AddBlogs = () => {
             </div>
             <div className="mb-4">
               <input
-                type="number"
+                type="text"
                 name="image"
                 value={formData.image}
                 onChange={handleChange}
