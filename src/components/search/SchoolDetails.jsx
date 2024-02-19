@@ -37,11 +37,20 @@ const SchoolDetails = () => {
     <div className="mx-28 mt-10 mb-28 ">
       <section className="">
         <div className="">
-          <img
-            className="rounded"
-            src="https://img.freepik.com/premium-photo/exterior-view-typical-american-school_685067-4599.jpg?size=626&ext=jpg&ga=GA1.1.945868740.1697346172&semt=sph"
-            alt=""
-          />
+          <Link target="_blank" to={school.LVL}>
+            <img
+              className="rounded"
+              src="https://bangladeshpost.net/webroot/uploads/featureimage/2023-11/6542b235ceac4.jpg"
+              alt=""
+            />
+          </Link>
+          <Link
+            target="_blank"
+            className="mt-4 font-bold text-blue-500 underline"
+            to={school.LVL}
+          >
+            Click Details
+          </Link>
           <div className="">
             <h1 className="font-bold text-xl mt-5">
               {school.INSTITUTE_NAME_NEW}

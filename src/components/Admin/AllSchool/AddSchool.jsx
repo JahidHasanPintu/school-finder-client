@@ -92,7 +92,7 @@ const AddSchool = () => {
                 name="LVL"
                 value={formData.LVL}
                 onChange={handleChange}
-                placeholder="Level (e.g., Higher Secondary)"
+                placeholder="School URL"
                 className="w-full p-2 border rounded"
               />
             </div>

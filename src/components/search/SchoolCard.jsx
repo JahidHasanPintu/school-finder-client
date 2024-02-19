@@ -9,18 +9,19 @@ const SchoolCard = (props) => {
   // const [DIVISION_NAME, DISTRICT_NAME, THANA_NAME, TYP, LVL, EIIN, INSTITUTE_NAME_NEW, POST_OFFICE, LOCATION, MOBPHONE] = props.school || [];
 
   return (
-    <div onClick={navigateToDetails} class="mt-5 mx-10 w-8/12">
+    <div onClick={navigateToDetails} class="mt-5 mx-10 w-8/12 cursor-pointer">
       <div className="bg-gray-200 p-5 lg:flex  items-center rounded-lg w-[800px]  h-[250px] ">
         <div
           class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
           title="Woman holding a mug"
         >
           <img
-            class="mr-4 w-[80%]"
-            src="https://cdn-icons-png.freepik.com/256/8074/8074788.png?uid=R95679985&ga=GA1.1.1242648836.1702358523&semt=ais"
+            class="mr-4 w-[100%] rounded"
+            src="https://tges.eduworlderp.com/image/demo_image.jpg"
             alt="school"
           />
         </div>
+
         <div class="mb-8 ml-5">
           <p class="text-sm text-gray-600 flex items-center">
             EIIN: {props?.school?.EIIN || "NA"}
@@ -32,7 +33,7 @@ const SchoolCard = (props) => {
             Division: {props?.school?.DIVISION_NAME || "NA"} District:{" "}
             {props?.school?.DISTRICT_NAME || "NA"} Thana:{" "}
             {props?.school?.THANA_NAME || "NA"} Type:{" "}
-            {props?.school?.TYP || "NA"} Level: {props?.school?.LVL || "NA"}{" "}
+            {/* {props?.school?.TYP || "NA"} Level: {props?.school?.LVL || "NA"}{" "} */}
             Post: {props?.school?.POST_OFFICE || "NA"}: Location:{" "}
             {props?.school?.LOCATION || "NA"} Mobile:{" "}
             {props?.school?.MOBPHONE || "NA"}

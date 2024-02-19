@@ -1,5 +1,6 @@
 import React from "react";
 import bannerImg2 from "../images/bg-2.jpg";
+import { Link } from "react-router-dom";
 const HomeSection1 = () => {
   return (
     <>
@@ -10,7 +11,7 @@ const HomeSection1 = () => {
             <img className="rounded-xl" src={bannerImg2} alt="" />
           </div>
           <div className="flex-2 w-1/2 ms-24  mt-3">
-            <p className="text-2xl font-semibold text-slate-800 text-justify">
+            <p className="text-2xl font-semibold text-slate-800 text-justify mb-8">
               <span className="text-blue-400">Discover</span> Your Path to
               Success with{" "}
               <span className="text-amber-700">School Finder BD</span>.{" "}
@@ -19,12 +20,13 @@ const HomeSection1 = () => {
               Your journey to knowledge, growth, and a brighter future starts
               here.
             </p>
-            <button
-              className="bg-blue-600 hover:bg-amber-400 hover:text-black py-1 px-6 rounded-xl font-semibold text-xl
-            mt-8 text-white text-center"
+            <Link
+              to={"/about"}
+              className="bg-blue-600 hover:bg-pink-500 hover:text-black px-6 rounded-xl font-semibold text-xl
+             text-white text-center py-3"
             >
               About Us
-            </button>
+            </Link>
           </div>
         </div>
       </section>

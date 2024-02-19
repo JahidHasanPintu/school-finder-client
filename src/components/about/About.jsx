@@ -57,7 +57,7 @@ const About = () => {
         <div className=" col-span-1  border  p-10 bg-orange-900 text-white rounded-2xl flex flex-col items-center gap-y-3 shadow-xl">
           <img
             className="w-[150px] h-[150px] rounded-full"
-            src="https://scontent.fdac14-1.fna.fbcdn.net/v/t39.30808-6/357409246_114096808399480_5230167461673955050_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeEW-K8AvOEPrhybrr2cb0mvOutvo1mmZRw662-jWaZlHIETrDP6TDJdBlIO8Dwk6s6K3o0sn47dZDkvnBotqEZ4&_nc_ohc=Kp3ePuHW4LAAX8_fVYi&_nc_ht=scontent.fdac14-1.fna&oh=00_AfDWjNIIPNGkpCsMKB0vpciRTs8Xh4r-O8dkAmzQKjdZnA&oe=65BFFCC2"
+            src="https://scontent.xx.fbcdn.net/v/t1.15752-9/428265278_363586913134135_1190319573717197502_n.jpg?stp=dst-jpg_s206x206&_nc_cat=108&ccb=1-7&_nc_sid=510075&_nc_eui2=AeGoKLERi_b6WoyYzDvpcXuhJDONoj4SlqkkM42iPhKWqbBcSsUvT50JapVcJiI8QUE2HNiBiKwKeRyzR96WgepE&_nc_ohc=Yhn-Wn91aAEAX83yxOv&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdShKsVT-zuadyslxtUPgvPwjxuDeb93x2Z4rk5I62TaVw&oe=65FA8B44"
             alt=""
           />
           <h1>Md Najmul Hasan</h1>
@@ -71,7 +71,7 @@ const About = () => {
         <div className=" col-span-1  border  p-10 bg-pink-900 text-white rounded-2xl flex flex-col items-center gap-y-3 shadow-xl">
           <img
             className="w-[150px] h-[150px] rounded-full"
-            src="https://img.freepik.com/free-photo/girl-sunglasses_1157-6289.jpg?size=626&ext=jpg&ga=GA1.1.945868740.1697346172&semt=ais"
+            src="https://scontent.xx.fbcdn.net/v/t1.15752-9/393143746_386379313959921_5907386434527638888_n.jpg?stp=dst-jpg_s206x206&_nc_cat=108&ccb=1-7&_nc_sid=510075&_nc_eui2=AeH7j_UJL_4VflJTX1NaAxY3Iz13lS5Ni5AjPXeVLk2LkG-Lv0ajwvc1ZcgxdcuiGkdurFgz1CmHJsmBNOyzBjmf&_nc_ohc=WG_JgRUqGDEAX_PEgH8&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdSu_Ta_L87Yr4E_ARf47WG_ACy4nQ2i8C4Eh4fmUgRIVA&oe=65FA7C5C"
             alt=""
           />
           <h1>Sumaya Kabir Reshma</h1>
