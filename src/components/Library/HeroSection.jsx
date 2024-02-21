@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getBaseURL } from "../../api/baseURL";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const baseURL = getBaseURL();
@@ -32,7 +33,6 @@ const HeroSection = () => {
 
     setIsLoading(false);
   }, [page, limit, search, filterCategory]);
-
 
   const handleSearch = (e) => {
     const searchText = e.target.value;
@@ -115,10 +115,15 @@ const HeroSection = () => {
                 <div className="w-full p-4 mt-2 bg-gray-100 rounded-lg">
                   {books.length > 0 ? (
                     <ul>
-                      {books.map((book, index) => (
-                        <li className="border-b border-gray-300 py-2 cursor-pointer" key={index}>
-                          <h2>{book?.name}</h2>
-                          </li>
+                      {books.map((book) => (
+                        <li
+                          className="border-b border-gray-300 py-2 cursor-pointer"
+                          key={book._id}
+                        >
+                          <Link to={book.pdf}>
+                            <h2>{book?.name}</h2>
+                          </Link>
+                        </li>
                       ))}
                     </ul>
                   ) : (
@@ -132,50 +137,48 @@ const HeroSection = () => {
       </div>
       <div className="mx-14 mb-28">
         <div className="mt-3 flex justify-between items-center">
-        <h1 className="text-3xl font-semibold ">All Books</h1> <hr />
-        <div className="mx-2 mb-2">
-          <select
-            name="category"
-            onChange={handleCategoryChange}
-            className="w-full p-2 border rounded"
-          >
-            <option value="" disabled selected hidden>
-              Filter category
-            </option>
-            <option value="islamic">Islamic</option>
-            <option value="children">Children</option>
-            <option value="programming">Programming</option>
-            <option value="sports">Sports</option>
-            <option value="story">Story</option>
-            <option value="cook">Cook</option>
-            <option value="poetry">poetry</option>
-          </select>
+          <h1 className="text-3xl font-semibold ">All Books</h1> <hr />
+          <div className="mx-2 mb-2">
+            <select
+              name="category"
+              onChange={handleCategoryChange}
+              className="w-full p-2 border rounded"
+            >
+              <option value="" disabled selected hidden>
+                Filter category
+              </option>
+              <option value="islamic">Islamic</option>
+              <option value="children">Children</option>
+              <option value="programming">Programming</option>
+              <option value="sports">Sports</option>
+              <option value="story">Story</option>
+              <option value="cook">Cook</option>
+              <option value="poetry">poetry</option>
+            </select>
           </div>
         </div>
-      
 
-
-      <section className="grid grid-cols-6 bg-slate-100 mt-8 gap-6  p-4 rounded">
-        {books.map((book) => (
-          <div
-            key={book._id}
-            className="flex flex-col items-center text-center shadow-sm gap-y-1 rounded w-30 h-[260px] bg-white border relative"
-          >
-            <img className="w-24 h-28 mt-2" src={book.image} alt="" />
-            <h1 className="font-semibold">{book.name}</h1>
-            <p>{book.authorName}</p>
-            <a
-              href={book.pdf}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-bold text-orange-500 absolute bottom-1"
+        <section className="grid grid-cols-6 bg-slate-100 mt-8 gap-6  p-4 rounded">
+          {books.map((book) => (
+            <div
+              key={book._id}
+              className="flex flex-col items-center text-center shadow-sm gap-y-1 rounded w-30 h-[260px] bg-white border relative"
             >
-              Download
-            </a>
-          </div>
-        ))}
-      </section>
-    </div>
+              <img className="w-24 h-28 mt-2" src={book.image} alt="" />
+              <h1 className="font-semibold">{book.name}</h1>
+              <p>{book.authorName}</p>
+              <a
+                href={book.pdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold text-orange-500 absolute bottom-1"
+              >
+                Download
+              </a>
+            </div>
+          ))}
+        </section>
+      </div>
     </div>
   );
 };

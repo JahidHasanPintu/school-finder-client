@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from "react";
 
 const ProgrammingBooks = () => {
-  const [islamicBooks, setIslamicBooks] = useState([]);
+  const [programmingBooks, setProgrammingBooks] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/books/")
       .then((res) => res.json())
       .then((data) => {
-        // Filter books based on the "islamic" category
-        const islamicCategoryBooks = data.books.filter(
+        // Filter books based on the "programming" category
+        const programmingCategoryBooks = data.books.filter(
           (book) => book.category === "programming"
         );
-        setIslamicBooks(islamicCategoryBooks);
+        setProgrammingBooks(programmingCategoryBooks);
       });
   }, []);
 
   return (
     <div className="mx-14 mb-28">
-      <h1 className="text-3xl font-semibold ">Programming Books</h1> <hr />
-      <section className="grid grid-cols-6 bg-slate-100 mt-8 gap-6  p-4 rounded">
-        {islamicBooks.map((book) => (
+      <h1 className="text-3xl font-semibold">Programming Books</h1> <hr />
+      <section className="grid grid-cols-6 bg-slate-100 mt-8 gap-6 p-4 rounded">
+        {programmingBooks.map((book) => (
           <div
             key={book._id}
             className="flex flex-col items-center text-center shadow-sm gap-y-1 rounded w-30 h-[260px] bg-white border relative"
